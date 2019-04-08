@@ -19,7 +19,10 @@ header部分：
 [?](https://www.jb51.net/article/146790.htm#)
 
 ```json
-`{`` ``"alg"``: ``"HS256"``,`` ``"typ"``: ``"JWT"``}`
+{
+    "alg":"HS256",
+    "typ": "JWT"
+}
 ```
 
 对应base64UrlEncode编码为：eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
