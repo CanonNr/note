@@ -34,7 +34,7 @@ payload部分：
 [?](https://www.jb51.net/article/146790.htm#)
 
 ```json
-`{`` ``"sub"``: ``"1234567890"``,`` ``"name"``: ``"John Doe"``,`` ``"iat"``: 1516239022``}`
+{"sub"``: ``"1234567890"``,`"name"``: "John Doe","iat"``: 1516239022``}`
 ```
 
 对应base64UrlEncode编码为：eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
