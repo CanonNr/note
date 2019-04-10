@@ -34,7 +34,11 @@ payload部分：
 [?](https://www.jb51.net/article/146790.htm#)
 
 ```json
-{"sub"``: ``"1234567890"``,`"name"``: "John Doe","iat"``: 1516239022``}`
+{
+    "sub": "1234567890",
+    "name": "John Doe",
+    "iat": 1516239022
+}
 ```
 
 对应base64UrlEncode编码为：eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ
@@ -43,7 +47,14 @@ payload部分：
 [?](https://www.jb51.net/article/146790.htm#)
 
 ```json
-`{``  ``"iss"``: ``"admin"``,     ``//该JWT的签发者``  ``"iat"``: 1535967430,    ``//签发时间``  ``"exp"``: 1535974630,    ``//过期时间``  ``"nbf"``: 1535967430,     ``//该时间之前不接收处理该Token``  ``"sub"``: ``"www.admin.com"``,  ``//面向的用户``  ``"jti"``: ``"9f10e796726e332cec401c569969e13e"`  `//该Token唯一标识``}`
+{
+    "iss": "admin",			//该JWT的签发者
+    "iat": 1535967430,    	//签发时间
+    "exp": 1535974630,    	//过期时间
+    "nbf": 1535967430,    	//该时间之前不接收处理该Token
+    "sub": "www.admin.com", //面向的用户
+    "jti": "9f10e796726e332cec401c569969e13e"//该Token唯一标识
+}
 ```
 
 signature部分：
@@ -51,7 +62,7 @@ signature部分：
 [?](https://www.jb51.net/article/146790.htm#)
 
 ```
-`HMACSHA256(`` ``base64UrlEncode(header) + "." +`` ``base64UrlEncode(payload),`` ``123456``) `
+HMACSHA256(base64UrlEncode(header) + "." +base64UrlEncode(payload),123456) 
 ```
 
 对应的签名为：keH6T3x1z7mmhKL1T3r9sQdAxxdzB6siemGMr_6ZOwU
