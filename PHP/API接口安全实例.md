@@ -116,8 +116,6 @@ $array['sign']=$sign;
 
 打印$array
 
-[![复制代码](../static/copycode-1555077823424.gif)](javascript:void(0);)
-
 ```php
 Array
 (
