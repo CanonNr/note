@@ -9,11 +9,11 @@
 * [API接口安全实例](./PHP/API接口安全实例.md)
 * [Swoole](./PHP/Swoole.md) 占坑
 
-##	JAVA
+	#	JAVA
 
-* [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
+	 [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
 
-##	其他
+	#	其他
 
 * [Go优缺点](./其他/Go优缺点.md)
 * [扫码登录原理](./其他/扫码登录原理.md)
@@ -21,4 +21,4 @@
 
 ### 埋坑
 
-*s [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
+* s[Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
