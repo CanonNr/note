@@ -2,17 +2,16 @@
 
 ### PHP
 
-- [队列](./PHP/队列.md)
-
-- [函数执行设置超时](./PHP/函数执行设置超时.md)
-- [JWT](./PHP/JWT.md)
-- [链式调用](./PHP/链式调用.md)
-- [API接口安全实例](./PHP/API接口安全实例.md)
-- [Swoole](./PHP/Swoole.md) 占坑
+* [队列](./PHP/队列.md)
+* [函数执行设置超时](./PHP/函数执行设置超时.md)
+* [JWT](./PHP/JWT.md)
+* [链式调用](./PHP/链式调用.md)
+* [API接口安全实例](./PHP/API接口安全实例.md)
+* [Swoole](./PHP/Swoole.md) 占坑
 
 ##	JAVA
 
-- [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
+* [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
 
 ##	其他
 
@@ -22,4 +21,4 @@
 
 ### 埋坑
 
-- [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
+*s [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
