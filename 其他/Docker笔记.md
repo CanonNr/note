@@ -14,7 +14,7 @@
 
 环境为Ubuntu 16.04.0 LTS , 云服务器
 
-	### 安装
+### 安装
 
 * **条件**
 
@@ -59,5 +59,5 @@
   $ sudo service docker stop
   # 重启服务
   $ sudo service docker restart
-   ```
+  ```
 
