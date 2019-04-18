@@ -3,7 +3,6 @@
 * [Swoole官网](https://www.swoole.com/)
 * [GitHub](https://github.com/swoole/swoole-src)
 * [官方文档](https://wiki.swoole.com/)
-* 
 
 ## ~~Win环境下的Swoole安装~~
 
