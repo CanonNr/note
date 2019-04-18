@@ -61,3 +61,13 @@
   $ sudo service docker restart
   ```
 
+## Docker的关键字
+
+### 镜像
+
+* 可以理解成模板
+
+  
+
+
+# (...未完待续)
