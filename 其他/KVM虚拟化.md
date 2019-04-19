@@ -210,8 +210,41 @@ $ virsh list --all  	# 查看所有的虚拟机
 # 17    first_os     shut off
 
 $ virt-viewer test 		# 通过模拟器进入控制台
-$ virsh console test	# 通过命令行进入,不需要其他工具(但是实测有问题,需要修改一些配置,弄好再说)
+	# 通过命令行进入,不需要其他工具(但是实测有问题,需要修改一些配置,弄好再说)
 ```
+
+* 通过ssh进入虚拟机
+
+  ```shell
+  $ virsh console test
+  ```
+
+  新创建的虚拟机直接执行该命令可能会没反应不出现光标，账号密码什么的。
+
+  > 解决方法  ：
+  >
+  > CentOS  下 虚拟机中直接执行
+  >
+  > ``*grubby --update-kernel=ALL --args=**"console=ttyS0"*``
+  >
+  > 然后重启虚拟机
+
+  
+
+  
+
+  ```shell
+  # 效果:
+  $ virsh console test
+  Connected to domain test14
+  
+  CentOS Linux 7 (Core)
+  Kernel 3.10.0-957.el7.x86_64 on an x86_64
+  localhost login: 
+  
+  ```
+
+  
 
 
 
