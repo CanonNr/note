@@ -17,6 +17,7 @@
 * [用户ID设计](./其他/用户ID设计.md) 
 * [Docker笔记.md](./其他/Docker笔记.md) 未完待续
 * [KVM虚拟化.md](./其他/KVM虚拟化.md)
+* [记一次Docker通过Nginx部署静态页面](./其他/记一次Docker通过Nginx部署静态页面.md)
 
 ### 埋坑
 
