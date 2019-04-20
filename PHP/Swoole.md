@@ -138,3 +138,57 @@ $client->close();
   * 如图
 
     ![](../static/20190417205739.png)
+
+
+
+
+
+## Web
+
+### 程序代码
+
+``http_server.php``
+
+```php
+$http = new swoole_http_server("0.0.0.0", 9501);
+
+$http->on('request', function ($request, $response) {
+    var_dump($request->get, $request->post);
+    $response->header("Content-Type", "text/html; charset=utf-8");
+    $response->end("<h1>Hello Swoole. #".rand(1000, 9999)."</h1>");
+});
+
+$http->start();
+```
+
+* Http服务器只需要关注请求响应即可，所以只需要监听一个`onRequest`事件。
+
+* 当前页面有新的http请求就会触发一次。
+
+* 两个回调参数：
+  * `request` 对象包含了请求的相关信息，如GET/POST请求的数据。
+  * `response`对象对request的响应可以通过操作response对象来完成。$response->end()方法表示输出一段HTML内容，并结束此请求。
+* `9501` 监听的端口，如果被占用程序会抛出致命错误，中断执行。
+
+
+
+### 启动服务
+
+```shell
+php http_server.php
+```
+
+- 可以打开浏览器，访问`http://127.0.0.1:9501`查看程序的结果。
+- 也可以使用apache `ab`工具对服务器进行压力测试
+
+
+
+## 运行结果
+
+* 浏览器运行结果
+
+![1555774450495](../static/1555774450495.png)
+
+* 终端结果
+
+  ![1555774540622](../static/1555774540622.png)
