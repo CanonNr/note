@@ -18,6 +18,7 @@
 * [Docker笔记](./其他/Docker笔记.md) 
 * [记一次Docker通过Nginx部署静态页面](./其他/记一次Docker通过Nginx部署静态页面.md)
 * [KVM虚拟化](./其他/KVM虚拟化.md)
+* [Nginx的反向代理](./其他\Nginx的反向代理.md)
 
 ### 埋坑
 
