@@ -136,14 +136,14 @@ server{
 ### 运行容器
 
 ```shell
-$ docker run 
---name mynginx 
--d 
--p 8666:80 
--v /data/nginx/html:/usr/share/nginx/html 
--v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf  
--v /data/nginx/logs:/var/log/nginx 
--v /data/nginx/conf.d:/etc/nginx/conf.d 
+$ docker run \
+--name mynginx \
+-d \
+-p 8666:80 \
+-v /data/nginx/html:/usr/share/nginx/html \
+-v /data/nginx/conf/nginx.conf:/etc/nginx/nginx.conf \
+-v /data/nginx/logs:/var/log/nginx \
+-v /data/nginx/conf.d:/etc/nginx/conf.d \
 -d nginx:latest
 ```
 
