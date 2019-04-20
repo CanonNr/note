@@ -1,4 +1,4 @@
-#	Swoole
+Swoole基础
 
 * [Swoole官网](https://www.swoole.com/)
 * [GitHub](https://github.com/swoole/swoole-src)
@@ -192,3 +192,100 @@ php http_server.php
 * 终端结果
 
   ![1555774540622](../static/1555774540622.png)
+
+
+
+## WebSocket
+
+### 程序代码
+
+`server.php`
+
+```php
+<?php
+    //创建websocket服务器对象，监听0.0.0.0:9502端口
+    $ws = new swoole_websocket_server("0.0.0.0", 9502);
+
+    //监听WebSocket连接打开事件
+    $ws->on('open', function ($ws, c) {
+        // var_dump($request->fd, $request->get, $request->server);
+        // $request 参数可以查看请求信息
+        $ws->push($request->fd, "hello, welcome\n"); // 向前台发送消息
+    });
+
+    //监听WebSocket消息事件
+    $ws->on('message', function ($ws, $frame) {
+        echo "Message: {$frame->data}\n";
+        
+    });
+
+    //监听WebSocket连接关闭事件
+    $ws->on('close', function ($ws, $fd) {
+        echo "client-{$fd} is closed\n";
+    });
+
+    $ws->start();
+```
+
+
+
+`index.html`
+
+```html
+<input type="text" name="content" id="content" value="今天天气不错">
+<input type="submit" id="submit" onclick="check()">
+
+<script>
+    function check() {
+        var content = document.getElementById('content').value;
+        var wsServer = 'ws://127.0.0.1:9502';
+        // Https 时为 wss://.....
+        var websocket = new WebSocket(wsServer);
+        websocket.onopen = function (evt) {
+            websocket.send('input：'+content);  // 向服务端发送数据
+            console.log("Connected to WebSocket server.");
+        };
+
+        websocket.onclose = function (evt) {
+            console.log("Disconnected");
+        };
+
+        websocket.onmessage = function (evt) {
+            console.log('Retrieved data from server: ' + evt.data);
+        };
+
+        websocket.onerror = function (evt, e) {
+            console.log('Error occured: ' + evt.data);
+        };
+    }
+</script>
+```
+
+
+
+### 运行结果
+
+`Chrome`
+
+![1555776246185](../static/1555776246185.png)
+
+`终端`
+
+![1555776339720](../static/1555776339720.png)
+
+
+
+### 向指定客户端发送消息
+
+ >  **服务器端可以调用`$server->push()`向某个客户端（使用$fd标识符）发送消息**
+
+​	之前使用`workerman`在向指定客户端发送消息时需要自行生成一个`PID`，但是实测后发现`Swoole`中`$ws->push($request->fd, "hello, welcome\n")`  —— `$request->fd`已经可以自动生成(从1开始，每次自增，最高到几千万后归1)。
+
+​	通过chrome和chrome访客模式访问指定目录，终端显示的fd不同，且将消息再次发回至客户端时不会产生交叉显示。
+
+`终端`
+
+![1555778132578](../static/1555778132578.png)
+
+
+
