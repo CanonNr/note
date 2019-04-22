@@ -16,7 +16,7 @@
 * [Go优缺点](./其他/Go优缺点.md)
 * [扫码登录原理](./其他/扫码登录原理.md)
 * [用户ID设计](./其他/用户ID设计.md) 
-* [Docker笔记.md](./其他/Docker笔记.md) 未完待续
+* [Docker笔记.md](./其他/Docker笔记.md) 
 * [KVM虚拟化.md](./其他/KVM虚拟化.md)
 * [记一次ESXI转KVM](./其他/记一次ESXI转KVM.md)
 * [Docker笔记](./其他/Docker笔记.md) 

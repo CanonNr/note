@@ -255,9 +255,3 @@ $ virt-viewer test 		# 通过模拟器进入控制台
 3. [KVM - virsh 常用命令](https://www.cnblogs.com/lin1/p/5776280.html)
 4. [KVM 通过virsh console连入虚拟机](https://blog.csdn.net/lemontree1945/article/details/80461037)
 5. [网卡桥连配置](https://blog.51cto.com/zero01/2083896)
-
-
-
-
-
-# (未完待续...)
