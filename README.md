@@ -7,7 +7,8 @@
 * [JWT](./PHP/JWT.md)
 * [链式调用](./PHP/链式调用.md)
 * [API接口安全实例](./PHP/API接口安全实例.md)
-* [Swoole](./PHP/Swoole.md) 占坑
+* [Swoole基础](./PHP/Swoole基础.md)
+* [最快的PHP框架-phalcon](./PHP/最快的PHP框架-phalcon.md)  占坑
 
 
 ### 其他
@@ -18,9 +19,10 @@
 * [Docker笔记.md](./其他/Docker笔记.md) 未完待续
 * [KVM虚拟化.md](./其他/KVM虚拟化.md)
 * [记一次ESXI转KVM](./其他/记一次ESXI转KVM.md)
-
-### 埋坑
-
+* [Docker笔记](./其他/Docker笔记.md) 
+* [记一次Docker通过Nginx部署静态页面](./其他/记一次Docker通过Nginx部署静态页面.md)
+* [KVM虚拟化](./其他/KVM虚拟化.md)
+* [Nginx的反向代理](./其他\Nginx的反向代理.md)
 * [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
 
 ### Java
