@@ -25,7 +25,7 @@
 * [KVM虚拟化](./其他/KVM虚拟化.md)
 * [Nginx的反向代理](./其他\Nginx的反向代理.md)
 * [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
-* [TCP、UDP、HTTP区别](./其他/TCP、UDP、HTTP区别.md) 占坑，今天close掉
+* [TCP、UDP区别](./其他/TCP、UDP区别.md) 
 
 ### Java
 * [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
