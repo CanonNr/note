@@ -49,3 +49,66 @@ composer update topthink/framework
 
 > 首先我的环境是Linux（Deepin桌面版）+ Nginx 1.15 + MySQL 5.5 + PHP7.1 
 
+### Nginx规则
+
+除了首页外出现404错误，需要修改配置文件
+
+````
+location ~/ {
+	if (!-e $request_filename) {
+		rewrite ^(.*)$ /index.php?s=/$1 last;
+		break;
+	}
+}
+````
+
+
+
+旧URL：
+
+```
+http://serverName/index.php/模块/控制器/操作/[参数名/参数值...]
+```
+
+设置后：
+
+```
+http://serverName/模块/控制器/操作/[参数名/参数值...]
+```
+
+例如设置了三个路由：
+
+```php
+Route::get('hello/:name', 'index/hello');
+Route::get('test', 'Test/index');
+Route::get('show', 'Test/show');
+```
+
+就可分访问
+
+* 127.0.0.1:8802/hello/100
+* 127.0.0.1:8802/shows
+* 127.0.0.1:8802/test
+
+
+
+## Think 命令
+
+和Laravel的相似，尝试了一下创建控制器的命令
+
+```
+# 切换至项目根目录
+php think make:controller User
+
+# 得到结果
+Controller:app\controller\User created successfully.
+
+```
+
+
+
+然后就多了一个``User.php``的控制器
+
+> 其他的命令也就类似了，不一一尝试了贴上文档需要使用时看。
+>
+> [命令行](https://www.kancloud.cn/manual/thinkphp6_0/1037640)
