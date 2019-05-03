@@ -19,7 +19,7 @@ ThinkPHP`6.0`在`5.1`的基础上对底层架构做了进一步的精简和统�
 
 > PHP >= 7.1.0
 
-> 6.0`版本开始，c。
+> `6.0`版本开始，必须通过`Composer`方式安装和更新。
 
 ### 安装
 
@@ -48,3 +48,4 @@ composer update topthink/framework
 ## 开始
 
 > 首先我的环境是Linux（Deepin桌面版）+ Nginx 1.15 + MySQL 5.5 + PHP7.1 
+
