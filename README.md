@@ -27,6 +27,7 @@
 * [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
 * [TCP、UDP区别](./其他/TCP、UDP区别.md) 
 * [架构入门190528](./其他/架构入门190528.md)
+* [ThinkPHP6.0入门](./PHP/ThinkPHP6.0入门.md)
 
 ### Java
 * [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
