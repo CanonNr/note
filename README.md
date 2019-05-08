@@ -10,6 +10,7 @@
 * [Swoole基础](./PHP/Swoole基础.md)
 * [最快的PHP框架-phalcon](./PHP/最快的PHP框架-phalcon.md)  占坑，等学完swoole吧
 * [Laravel中将Session改为Redis驱动](./PHP/Laravel中将Session改为Redis驱动.md)
+* [Redis在Laravel中拒绝远程访问](./PHP/Redis在Laravel中拒绝远程访问.md)
 
 
 ### 其他
