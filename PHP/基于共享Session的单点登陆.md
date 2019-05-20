@@ -10,9 +10,11 @@
 
 本地可修改HOST
 
+> 个人理解：用户登陆肯定是少不了`Cookie`的,为了安全只有同域名下浏览器才允许获取
+
 ## 共享Session
 
-之前有讲过,就是将Session改为`Redis`驱动并解除私有
+之前有讲过，就是将Session改为`Redis`驱动并解除私有
 
 - [Laravel中将Session改为Redis驱动](./PHP/Laravel中将Session改为Redis驱动.md)
 - [Redis在Laravel中拒绝远程访问](./PHP/Redis在Laravel中拒绝远程访问.md)
@@ -21,7 +23,7 @@
 
 在根目录`.ENV`中添加`SESSION_DOMAIN=.xxx.com`
 
-`.xxx.com`输入自己的域名,最前面那个点一定不要漏
+`.xxx.com`输入自己的域名，最前面那个点一定不要漏
 
 设置这个的原因是在`config/session`中引用过这个配置
 
@@ -33,6 +35,6 @@
 
 ## 测试
 
-为了方(tou)便(lan),我直接跑了两台虚拟机(完全一样的代码),通过修改`HOST`
+为了方(tou)便(lan)，我直接跑了两台虚拟机(完全一样的代码)，通过修改`HOST`
 
-在无痕模式下登陆其中一个系统,另一个直接有出现了用户头像无需登陆.
+在无痕模式下登陆其中一个系统，另一个直接有出现了用户头像无需登陆。
