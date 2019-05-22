@@ -16,8 +16,8 @@
 
 之前有讲过，就是将Session改为`Redis`驱动并解除私有
 
-- [Laravel中将Session改为Redis驱动](./PHP/Laravel中将Session改为Redis驱动.md)
-- [Redis在Laravel中拒绝远程访问](./PHP/Redis在Laravel中拒绝远程访问.md)
+- [Laravel中将Session改为Redis驱动](.//PHP/Laravel中将Session改为Redis驱动.md)
+- [Redis在Laravel中拒绝远程访问](../PHP/Redis在Laravel中拒绝远程访问.md)
 
 ## 修改配置
 
