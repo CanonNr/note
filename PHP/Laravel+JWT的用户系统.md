@@ -359,4 +359,3 @@ $token = auth()->login($user);
   ```
 
   
-
