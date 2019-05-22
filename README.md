@@ -5,6 +5,7 @@
 * [队列](./PHP/队列.md)
 * [函数执行设置超时](./PHP/函数执行设置超时.md)
 * [JWT](./PHP/JWT.md)
+* [Laravel+JWT的用户系统](./PHP/Laravel+JWT的用户系统.md)
 * [链式调用](./PHP/链式调用.md)
 * [API接口安全实例](./PHP/API接口安全实例.md)
 * [Swoole基础](./PHP/Swoole基础.md)
