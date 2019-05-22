@@ -240,7 +240,7 @@ class AuthController extends Controller
 
 **请求头：**`Authorization: Bearer eyJhbGciOiJIUzI1NiI...`
 
-### 怎么用
+### token使用
 
 按照以上步骤将`JWT`应用在实际项目后发现好像系统的登录功能都异常了，莫慌只是没有将重要的`token`放在指定位置
 
@@ -250,7 +250,9 @@ class AuthController extends Controller
 
 例如：``http://XXX.com/me?token=eyJhbGciOiJIUzI1NiI``
 
-就会发现系统已经有了登录状态
+![1558510626849](../static/1558510626849.png)
+
+发现获取到了用户的信息：有用户名、id、头像等
 
 如果失败可能是token过期了
 
@@ -263,4 +265,98 @@ class AuthController extends Controller
 **请求头：**`Authorization: Bearer eyJhbGciOiJIUzI1NiI...`
 
 ![1558508856864](../static/1558508856864.png)
+
+
+
+
+
+## MVC下使用JWT
+
+前面所述的都是在`Restful Api`下的项目，其实传统的前后端不分离`MVC`模式下也是可以的只需要稍作修改。
+
+### 配置
+
+```php
+# 前面有修改过这个配置，这次将WEB下的driver 同样改为jwt就好了
+
+    'guards' => [
+        'web' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
+
+        'api' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+        ],
+    ],
+```
+
+
+
+### 修改登录模块
+
+```php
+# 根据demo得到方法
+$token = auth()->attempt($credentials)；  
+# 或  
+$user = User::first()；
+$token = auth()->login($user);
+# $token就是我们需要的jwt
+```
+
+
+
+### token使用
+
+和之前是一样的两种方法：修改`url`或者修改`Header`
+
+* 方法一是完全一样的，访问``http://XXX.com/me?token=eyJhbGciOiJIUzI1NiI``
+
+  就会发现系统已经有了登录状态
+
+* 方法二也是设置`Header`，就是位置不太一样了。
+
+  需要给控制器写一个中间件
+
+  ````PHP
+  <?php
+  
+  namespace App\Http\Middleware;
+  class SystemMiddleware
+  {
+      /**
+       * Handle an incoming request.
+       *
+       * @param  \Illuminate\Http\Request $request
+       * @param  \Closure $next
+       * @return mixed
+       */
+      public function handle($request, Closure $next)
+      {
+          //jwt header
+          $request->headers->set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODA5OVwvYXBpXC9sb2dpbiIsImlhdCI6MTU1ODUxMDQzOCwiZXhwIjoxNTU4NTE0MDM4LCJuYmYiOjE1NTg1MTA0MzgsImp0aSI6IjE5VnBaYkh5SktEWmZjWW0iLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.mgJTe_VDCPI02R7iX4vhdHAZZeDrpoEkCRGOlmKjQII');
+          
+      	return $next($request);
+      }
+  }
+  ````
+
+  
+
+  因为只是demo没有将token写活。
+
+  
+
+  ```PHP
+  # 要注意的是设置`header`找到数个办法这是唯一成功的，不知道为什么既然成功了就这么写了。
+  # 其他的方法还有:
+  header('Authorization:Bearer .....');
+  return $next($request)->header('Authorization:Bearer .....');
+  return $next($request)->header('Authorization','Bearer .....');
+  
+  ...
+  ```
+
+  
 
