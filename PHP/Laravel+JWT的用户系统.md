@@ -16,7 +16,7 @@
 ### 首先在laravel中安装`jwt-auth`的包
 
 ```
-composer require tymon/jwt-auth
+composer require tymon/jwt-auth 1.*@rc
 ```
 
 ### 添加服务(Laravel5.4之后的就不需要了)
