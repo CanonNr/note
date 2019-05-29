@@ -48,14 +48,13 @@ docker exec -it mysql bash
 # mysql 为 之前安装的容器名
 
 mysql -u root -p
+    
 # -p就可以 先不用输入密码
-
 # 出现一个 Enter password:   然后输入密码
-
 # 密码正确后出现了熟悉的味道
-
-# mysql>
-
+    
+mysql>
+    
 # 依次输入 , 主要意思就是添加一个root外网权限,初始只可以在localhost下  %代表ALL
 # 最后一句尤为重要,刷新配置命令
 mysql> grant all privileges on *.* to 'root'@'%' identified by 'password123';
