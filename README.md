@@ -33,6 +33,7 @@
 * [架构入门190528](./其他/架构入门190528.md)
 * [ThinkPHP6.0入门](./PHP/ThinkPHP6.0入门.md)
 * [搭建一个Nginx+RTMP的流媒体服务器](./其他/搭建一个Nginx+RTMP的流媒体服务器.md)
+* [Ubuntu下进程守护-supervisor](./其他/Ubuntu下进程守护-supervisor.md)
 
 ### 埋坑
 
