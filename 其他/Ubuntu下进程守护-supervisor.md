@@ -45,6 +45,7 @@ autorestart=true
 # php绝对路径可以通过 whereis php 获取
 # 后面的artisan命令是自定义的
 # 这段命令其实就是 php artisan workerman:command start d
+# 配置文件不止这些 根据情况加吧
 ```
 
 
@@ -60,6 +61,8 @@ supervisorctl reload
 supervisorctl start all
 # 启动指定脚本
 supervisorctl start workerman
+# 重启 关闭同理 stop / restart
+
 # 查看脚本状态
 supervisorctl status
 ```
