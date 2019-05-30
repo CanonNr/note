@@ -2,7 +2,7 @@
 
 这是一个进程管理工具，简单话说就是你守护的进程如果关闭了他会自动帮你开起来。
 
-> 这是之前用过的一个技术，感觉以后还会用到就趁着没忘干净总结一下，所以就不一步步截图记录了。
+这是之前用过的一个技术，感觉以后还会用到就趁着没忘干净总结一下，所以就不一步步截图记录了。
 
 ## 安装
 
@@ -60,5 +60,22 @@ supervisorctl reload
 supervisorctl start all
 # 启动指定脚本
 supervisorctl start workerman
+# 查看脚本状态
+supervisorctl status
 ```
 
+
+
+## 其他
+
+`/var/log/supervisor/supervisord.log` 可以在这获取到supervisor的日志
+
+
+
+
+
+## 可能遇到问题
+
+* workerman: ERROR (spawn error)
+
+  实测是脚本有问题，尝试下直接执行脚本文件有没有问题。
