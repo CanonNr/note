@@ -29,11 +29,16 @@
 * [记一次Docker通过Nginx部署静态页面](./其他/记一次Docker通过Nginx部署静态页面.md)
 * [KVM虚拟化](./其他/KVM虚拟化.md)
 * [Nginx的反向代理](./其他\Nginx的反向代理.md)
-* [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
 * [TCP、UDP区别](./其他/TCP、UDP区别.md) 
 * [架构入门190528](./其他/架构入门190528.md)
 * [ThinkPHP6.0入门](./PHP/ThinkPHP6.0入门.md)
 * [搭建一个Nginx+RTMP的流媒体服务器](./其他/搭建一个Nginx+RTMP的流媒体服务器.md)
+
+### 埋坑
+
+* [Laravel下更新数据Created_at字段也会更改的问题](./埋坑/Laravel下更新数据Created_at字段也会更改的问题.md)
+
+* [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
 
 ### Java
 * [方法的重写与重载](./JAVA/方法的重写与重载.md) 	

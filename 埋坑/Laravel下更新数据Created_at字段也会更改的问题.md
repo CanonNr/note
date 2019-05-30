@@ -1,0 +1,9 @@
+# Laravel下更新数据Created_at字段也会更改的问题
+
+
+
+**解决方法：**
+
+在数据库结构中将表中的`created_at` 字段的`默认值`设置为`null `，而非 `CURRENT_TIMESTAMP` 或` '0000-00-00 00:00:00'`
+
+​	
