@@ -53,7 +53,12 @@ autorestart=true
 
 
 
-```
-
+```shell
+# 对配置文件或者脚本文件有修改一定要重启,重新加载配置文件
+supervisorctl reload
+# 可以这样启动配置需要守护的脚本 (启动所有)
+supervisorctl start all
+# 启动指定脚本
+supervisorctl start workerman
 ```
 
