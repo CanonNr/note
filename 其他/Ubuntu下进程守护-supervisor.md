@@ -26,3 +26,34 @@ $ sudo apt-get install supervisor
 
 用于守护基于**Laravel**的**Workerman**服务
 
+
+
+## 修改配置文件
+
+```shell
+$ sudo vim workerman.conf
+
+# 添加以下内容
+[program:workerman]
+command=/usr/bin/php /www/wwwroot/site/artisan workerman:command start d
+autostart=true
+autorestart=true
+
+# 首先名字一定要对应上
+# command是要守护的脚本
+# 因为不确定自动执行时目录所以干脆都写了绝对路径
+# php绝对路径可以通过 whereis php 获取
+# 后面的artisan命令是自定义的
+# 这段命令其实就是 php artisan workerman:command start d
+```
+
+
+
+## 如何守护
+
+
+
+```
+
+```
+
