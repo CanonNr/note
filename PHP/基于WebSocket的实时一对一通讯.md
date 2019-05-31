@@ -20,8 +20,6 @@ composer require workerman/workerman
 
 安装了包并不能直接使用需要开启相对应`server`服务。
 
-
-
 * 原生的写法是：
 
   ```PHP
@@ -71,8 +69,6 @@ composer require workerman/workerman
 首先讲下需求：A控制器做判断，为`true`时Show页面产生相应动作。
 
 
-
-### 代码
 
 ```php
 # 服务端
