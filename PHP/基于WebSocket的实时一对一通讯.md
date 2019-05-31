@@ -185,3 +185,12 @@ if(true){
 </script>
 ```
 
+
+
+
+
+## 参考
+
+* [workerman文档](http://doc.workerman.net/faq/send-data-to-client.html)
+* [基于Worker推送](http://wenda.workerman.net/?/question/508)
+* [Channel组件推送例子](http://doc.workerman.net/components/channel-examples.html)（支持多进程/服务器集群，需要下载Channel组件）
