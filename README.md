@@ -14,6 +14,7 @@
 * [Redis在Laravel中拒绝远程访问](./PHP/Redis在Laravel中拒绝远程访问.md)
 * [基于共享Session的Laravel单点登陆](./PHP/基于共享Session的单点登陆.md)
 * [CAS+JWT的单点登陆](./PHP/CAS+JWT的单点登陆.md)
+* [基于WebSocket的实时一对一通讯](./PHP/基于WebSocket的实时一对一通讯.md)
 
 
 ### 其他
