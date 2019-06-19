@@ -220,3 +220,13 @@ $ cat /server/nginx/conf.d/default.conf
 
 ![1560908965254](../static/1560908965254.png)
 
+
+
+
+
+## 参考
+
+[ydtg1993/server](https://github.com/ydtg1993/server/)
+
+[Docker安装nginx以及负载均衡](https://www.cnblogs.com/xishaohui/p/8871994.html)
+
