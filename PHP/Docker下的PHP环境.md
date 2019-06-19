@@ -152,6 +152,65 @@ $ sudo docker ps -a
 
 ```SHELL
 # 因为无法运行，先删除原有容器
+$ docker rm mynginx
+mynginx   # 返回容器名表示操作成功
 
+# 创建一个普通的nginx容器，无需端口和文件映射
+$ docker run --name mynginx -d nginx
+# 通过命令进入交互终端
+$ docker exec -it mynginx /bin/bash
+# 进入终端后去寻找nginx的配置文件
+$ cd /etc/nginx/ 
+# 想要的都在这了
+$ ls
+conf.d    fastcgi_params    koi-utf  koi-win  mime.types  modules  nginx.conf  scgi_params    uwsgi_params  win-utf
+# 退出容器到宿主机里
+exit
+# 拷贝刚才看到的nginx文件夹
+$ docker cp mynginx:/etc/nginx/ server/nginx/
+# 重新执行（若已存在不会重复创建）
+$ docker-compose up -d
 ```
+
+
+
+#### 无法解析PHP代码问题
+
+
+
+```shell
+# 在server文件夹中映射了一个www目录就是用来放置代码的
+# 创建一个index.html文件 并写入html标签 保存
+# 因为已经映射80端口，直接外部浏览器访问宿主机ip就可以看到我们所要的东西了
+# 但是创建一个php文件然后访问，却把php文件直接下载下来了
+# 建议可以去nginx的Log文件看一下
+$ cat /server/logs/nginx.logs/error.log
+# 查看到很多类似报错
+2019/06/18 12:32:01 [error] 6#6: *1 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.10.40, server: localhost, request: "GET / HTTP/1.1", upstream: "fastcgi://172.18.0.4:9000", host: "192.168.10.105"
+
+# 既然有报错信息代表php和Nginx有通讯，但是没有解析成功
+# 查看nginx的配置文件
+$ cat /server/nginx/conf.d/default.conf
+# 其中有一段
+# pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+#location ~ \.php$ {
+#    root           html;
+#    fastcgi_pass   127.0.0.1:9000;
+#    fastcgi_index  index.php;
+#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+#    include        fastcgi_params;
+#}
+# 关于PHP文件的被注释掉了，导致nginx当遇到.php文件时无法通知php-fpm解析
+# 但事实是取消注释重启后依旧无法解析
+# 一顿搜索后。。。
+
+# 关于fastcgi_pass参数需要填写php-fpm所在的ip及端口，端口9000已经实锤但是IP有三种
+# 127.0.0.1:9000 ；容器的IP:9000（例如 172.18.0.4:9000） ； 填写PHP对应的容器名（例如  myphp:9000）
+# 我填写的第三种 myphp:9000
+
+# fastcgi_param  SCRIPT_FILENAME 同样要根据情况修改一下
+# fastcgi_param  SCRIPT_FILENAME /var/www/html$fastcgi_script_name;
+```
+
+
 
