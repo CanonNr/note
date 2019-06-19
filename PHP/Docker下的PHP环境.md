@@ -212,5 +212,11 @@ $ cat /server/nginx/conf.d/default.conf
 # fastcgi_param  SCRIPT_FILENAME /var/www/html$fastcgi_script_name;
 ```
 
+#### 测试
 
+创建**index.php**文件并写入**phpinfo();**
+
+可以看到：
+
+![1560908965254](../static/1560908965254.png)
 
