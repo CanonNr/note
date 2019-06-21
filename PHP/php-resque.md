@@ -145,5 +145,48 @@ require './vendor/bin/resque';
 
 
 
-### 看下效果
+### 操作流程
+
+```SHELL
+# 首先生成测试数据存入队列
+php queue.php
+# 按照之前代码成功后会返回一个name
+enqueue:8185
+# 此时如果你去Redis可视化管理工具或者敲命令 会在db0中看到resque相关数据
+
+# 开启worker文件
+QUEUE=* php worker.php
+# 前面的QUQU是什么?
+# 这是一个必填的参数,worker会根据它去执行什么任务
+# 因为在一个大型应用中可能会有很多需要队列的场景,例如:短信,邮件,日志等
+# 而QUEUE=* 表示了执行所有任务
+
+#!/usr/bin/env php
+[notice] Starting worker SUN:9724:*
+ps: unknown option -- A
+Try `ps --help' for more information.
+[notice] Starting work on (Job{default} | ID: 25329c7295c0eebbf6eb38e8403f9d60 |
+ My_Job | [{"name":8185}])
+ 
+ # 讲一个笑话:PHP中notice是一种报错虽然不影响使用,在此我也以为这是一个报错,测试了一会找不到头绪,后来看了文档才发现 这是一个成功的通知!
+ 
+ # 还可以去看一下log.txt文件有没有相应的数据
+ # emmm,我实在懒得截图了
+```
+
+
+
+## 其他
+
+**PHP-Resque** 的环境变量有：
+
+- **QUEUE** – 这个是必要的，会决定 worker 要执行什么任务，重要的在前，例如 QUEUE=notify,mail,log 。也可以设定為 QUEUE=* 表示执行所有任务。
+- **APP_INCLUDE** – 可选，加载文件用的。可以设成 APP_INCLUDE=require.php ，在 require.php 中引入所有 Job 的 Class即可。
+- **COUNT** – 设定 worker 数量，预设是1 COUNT=5 。
+- **REDIS_BACKEND** – 设定 Redis 的 ip, port。如果没设定，预设是连 localhost:6379 。
+- **LOGGING, VERBOSE** – 设定 log， VERBOSE=1 即可。
+- **VVERBOSE** – 比较详细的 log， VVERBOSE=1 debug 的时候可以开出来看。
+- **INTERVAL** – worker 检查 queue 的间隔，预设是五秒 INTERVAL=5 。
+- **PIDFILE** – 如果你是开单 worker，可以指定 PIDFILE 把 pid 写入，例如 PIDFILE=/var/run/resque.pid 。
+- **BACKGROUND** 可以把 resque 丢到背景执行。或者使用 `php resque.php &`就可以了。
 
