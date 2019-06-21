@@ -16,6 +16,8 @@
 * [CAS+JWT的单点登陆](./PHP/CAS+JWT的单点登陆.md)
 * [基于WebSocket的实时一对一通讯](./PHP/基于WebSocket的实时一对一通讯.md)
 * [Docker下的PHP环境](./PHP/Docker下的PHP环境.md)
+* [PHP面试题总结190620](./PHP/PHP面试题总结190620 .md)
+* [基于Redis的消息队列组件 —php-resque](./PHP/php-resque.md)
 
 
 ### 其他
