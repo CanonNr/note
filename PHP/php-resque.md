@@ -1,4 +1,10 @@
-## PHP-Resque
+### 为什么选择了PHP-Resque
+
+面对消息队列可能最常用的几个方案就是：
+
+- 通过MySQL或者Redis自己写（MySQL性能跟不上，自己写又重新造轮子）
+- RabbitMQ（太大了）
+- PHP-Resque（轻量级）
 
 ### 准备
 
@@ -140,6 +146,7 @@ QUEUE=* php worker.php
 # 这是一个必填的参数,worker会根据它去执行什么任务
 # 因为在一个大型应用中可能会有很多需要队列的场景,例如:短信,邮件,日志等
 # 而QUEUE=* 表示了执行所有任务
+# 多个参数可以这么写 QUEUE=*  COUNT=5 VVERBOSE=1 php worker.php
 
 #!/usr/bin/env php
 [notice] Starting worker SUN:9724:*
