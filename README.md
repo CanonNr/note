@@ -17,6 +17,7 @@
 * [基于WebSocket的实时一对一通讯](./PHP/基于WebSocket的实时一对一通讯.md)
 * [Docker下的PHP环境](./PHP/Docker下的PHP环境.md)
 * [基于Redis的消息队列组件 —php-resque](./PHP/php-resque.md)
+* [Lumen中使用Redis](./PHP/Lumen中使用Redis.md)
 
 
 ### 其他
