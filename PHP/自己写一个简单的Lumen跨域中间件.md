@@ -59,7 +59,11 @@ Win10
 
    
 
+### 相关插件
 
+[laravel-cors](https://github.com/barryvdh/laravel-cors)
+
+[medz/cors](https://github.com/medz/cors)
 
 ## end
 
