@@ -9,14 +9,14 @@ Laravel中内置的FTP上传功能还是很好用的!
   
 
   ```php
-  # config/filesystems.php
+  # 在config/filesystems.php文件夹下添加ftp的参数
   'disks' => [
   	...
       'ftp' => [
               'driver'   => 'ftp',
-              'host'     => '192.168.1.193',
-              'username' => 'uenit',
-              'password' => 'uenit',
+              'host'     => '192.168.1.1',
+              'username' => '***',
+              'password' => '***',
               'port'     => 21,
               // 'root'     => '',
               // 'passive'  => true,
@@ -26,7 +26,7 @@ Laravel中内置的FTP上传功能还是很好用的!
   ]
   ```
 
-
+  
 
 - 第二步：直接文件上传就好了
 
