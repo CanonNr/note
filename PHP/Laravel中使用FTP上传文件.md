@@ -1,6 +1,8 @@
 ## Laravel中使用FTP上传文件
 
-Laravel中内置的FTP上传功能还是很好用的!
+Laravel中内置的FTP上传功能还是很好用的！
+
+Lumen同样适用
 
 ## 开始
 
@@ -10,6 +12,7 @@ Laravel中内置的FTP上传功能还是很好用的!
 
   ```php
   # 在config/filesystems.php文件夹下添加ftp的参数
+  # Lumen中需要先复制出一个config的文件夹
   'disks' => [
   	...
       'ftp' => [
