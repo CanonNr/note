@@ -37,6 +37,12 @@ List<Map<String, Object>> maps = template.queryForList(sql);
 // 输出结果
 System.out.println(maps);
 
-//结果：[{id=1, name=小王, age=16}, {id=2, name=小刘, age=17}, {id=3, name=小刚, age=15}, {id=4, name=mm, age=50}, {id=5, name=周杰伦, age=50}, {id=6, name=周润发, age=32}, {id=7, name=彭于晏, age=28}]
+// 结果：[{id=1, name=小王, age=16}, {id=2, name=小刘, age=17}, {id=3, name=小刚, age=15}, {id=4, name=mm, age=50}, {id=5, name=周杰伦, age=50}, {id=6, name=周润发, age=32}, {id=7, name=彭于晏, age=28}]
+
+// 修改操作
+String sql = "UPDATE student set age=? where name='周杰伦'";
+int res = template.update(sql,17);
+System.out.println(res);
+// 结果： 1
 ```
 
