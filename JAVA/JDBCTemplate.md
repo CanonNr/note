@@ -46,3 +46,64 @@ System.out.println(res);
 // 结果： 1
 ```
 
+
+
+## RowMpper
+
+```java
+/*  
+*	template中的方法可以创建List、Map...的结果,但是我们更需要的是对象
+*	首先定义一个Student类(根据情况而定)
+*/
+
+// 首先还是写一个SQL语句
+String sql = "SELECT * FROM student";
+// 调用query方法,第一个参数是万年不变的SQL语句,第二个是一个RowMapper类
+List<Student> list= template.query(sql,new RowMapper<Student>() {
+    @Override
+    public Student mapRow(ResultSet res, int i) throws SQLException {
+        // 实例化已经准备好的Student类
+        Student student = new Student();
+        // 获取ResultSet返回的结果 并通过Student类的set方法定义变量
+        student.setId(res.getInt("id"));
+        student.setAge(res.getInt("age"));
+        student.setName(res.getString("name"));
+        // 输出对象
+        return student;
+    }
+});
+
+// 此刻我们获取到了一个List集合,遍历输出
+for (Student student:list) {
+    System.out.print(student.getId()+"  ");
+    System.out.print(student.getName()+"  ");
+    System.out.println(student.getAge()+"  ");
+}
+
+/**
+* 结果：
+*  	1  小王  16
+*  	2  小刘  17
+*  	3  小刚  15
+*  	4  mm  50
+*  	5  周杰伦  17
+*  	6  周润发  32
+*  	7  彭于晏  28
+*/
+
+
+// ↓↓↓ 当然还有简写 ↓↓↓
+```
+
+
+
+## BeanPropertyRowMapper
+
+```java
+String sql = "SELECT * FROM student";
+List<Student> list= template.query(sql,new BeanPropertyRowMapper<Student>(Student.class));
+for (Student student:list) {
+    System.out.println(student.getName());
+}
+```
+
