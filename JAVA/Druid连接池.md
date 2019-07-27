@@ -10,7 +10,7 @@ Druid是阿里巴巴数据库事业部出品，为监控而生的数据库连接
 
 [GitHub](https://github.com/alibaba/druid)
 
- 
+ [本站下载](/wp-content/uploads/2019/07/druid-1.1.15.rar)
 
 ## 导入
 
