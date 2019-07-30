@@ -1,4 +1,4 @@
-##	目录
+##	
 
 ### PHP
 
@@ -44,9 +44,21 @@
 ### 埋坑
 
 * [Laravel下更新数据Created_at字段也会更改的问题](./埋坑/Laravel下更新数据Created_at字段也会更改的问题.md)
-
 * [Linux下composer的安装错误](./埋坑/Linux下composer的安装错误.md)
+* [IDEA中无法连接数据库](./埋坑/IDEA中无法连接数据库.md)
 
 ### Java
 * [方法的重写与重载](./JAVA/方法的重写与重载.md) 	
+
+* [JAVA中各种数组、集合、列表区别](./JAVA/JAVA中各种数组、集合、列表区别.md)
+
+* JDBC
+  * [基本步骤](./JAVA/JDBC.md)
+  * [使用Properties配置JDBC](./JAVA/Properties.md)
+
+* [Druid连接池](./JAVA/Druid连接池.md)
+
+* [JDBCTemplate](./JAVA/JDBCTemplate.md)
+
+  
 

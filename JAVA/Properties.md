@@ -2,12 +2,14 @@
 
 1. 在src目录下底下声明一个文件 xxx.properties ，里面的内容吐下：
 
-```java
-driverClass=com.mysql.jdbc.Driver
-url=jdbc:mysql://localhost/student
-name=root
-password=root
-```
+   ```java
+   driverClass=com.mysql.jdbc.Driver
+   url=jdbc:mysql://localhost/student
+   name=root
+   password=root
+   ```
+
+   
 
 
 
