@@ -152,6 +152,56 @@ printer.printMessage();
 */
 ```
 
+### 
+
+## 注解式(配置类)
+
+上面方法中如果使用@Component就必须在类上使用@ComponentScan，但是有些场景下每个类都加上@ComponentScan，所以就有了配置类。具体代码也只是在注解式上加了一个新的文件。
+
+### 创建一个AppConfig类
+
+```java
+package hello;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration  // 证明这个类是配置类
+@ComponentScan  // 扫描之前定义的需要spring声明的类
+public class AppConfig {
+}
+
+```
+
+
+
+### 删除ApplicationSpring中的@ComponentScan，并修改Spring容器实例化方法
+
+```java
+package hello;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class ApplicationSpring {
+    public static void main(String[] args) {
+        // 唯一的区别在这：实例化方法里的参数不再是当前的类而改成了上面新建的配置类
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        MessagePrinter printer = context.getBean(MessagePrinter.class);
+        printer.printMessage();
+        /*  
+           得到的结果还是一样的：
+           Hello MessagePrinter
+           Hello MessageService
+           hello lksun ~
+       */
+    }
+}
+
+```
+
+
+
 ## XML
 
 ### 1.万年不变的导入Spring的Jar包
