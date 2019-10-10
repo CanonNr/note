@@ -60,5 +60,11 @@
 
 * [JDBCTemplate](./JAVA/JDBCTemplate.md)
 
+* [Mybatis入门](./JAVA/Mybatis入门.md)
+
+* [Spring初始化容器获取Bean对象](./JAVA/Spring初始化容器获取Bean对象.md)
+
+  
+  
   
 
