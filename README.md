@@ -64,6 +64,8 @@
 
 * [Spring初始化容器获取Bean对象](./JAVA/Spring初始化容器获取Bean对象.md)
 
+* [Spring的单元测试模块](./JAVA/Spring的单元测试模块.md)
+
   
   
   
