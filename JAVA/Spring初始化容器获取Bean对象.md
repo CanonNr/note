@@ -8,7 +8,7 @@
 
 ## 注解
 
-###  1.Maven引入Spring的Jar包
+###  1.万年不变的导入Spring的Jar包
 
 在`pom.xml`文件中加入
 
@@ -151,4 +151,86 @@ printer.printMessage();
 	hello lksun ~
 */
 ```
+
+## XML
+
+### 1.万年不变的导入Spring的Jar包
+
+在`pom.xml`文件中加入
+
+```xml
+<dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.1.9.RELEASE</version>
+    </dependency>
+</dependencies>
+```
+
+
+
+### 2.MessagePrinter和MessageService
+
+和注解式没太大改变只是将相应的引用以及@Autowired、@ComponentScan、@Component删掉
+
+其他完全相同不再贴代码
+
+### 3.创建一个xml文件
+
+在IDEA中找到 `resources`文件夹 -> 右键 -> New->XML Configuration File -> Spring Config
+
+如果没有找到`Spring Config`证明Maven没有配置或者Jar包有问题
+
+自己创建一个空的xml文件不要直接使用，spring有一个固定的格式（可以手动粘贴）
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        bean元素：表示当前对象通过Spring容器进行管理
+        id元素：作为对象的唯一标识
+        class元素：被管理的类的全名
+    -->
+    <bean id="service" class="hello.MessageService"></bean>
+
+    <bean id="printer" class="hello.MessagePrinter">
+        <!--
+            name的service 和 MessagePrinter类中的 service属性是对应的
+            ref的service  和 id等于service的Bean对象是对应的
+            property作用：成功的创建了MessagePrinter和MessageService的一个依赖关系
+        -->
+        <property name="service" ref="service"></property>
+    </bean>
+
+</beans>
+
+```
+
+### 4. 执行文件
+
+```java
+package hello;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class ApplicationSpring {
+    public static void main(String[] args) {
+        // 初始化一个Spring容器，这里和注解式用的方法不同参数也不同
+        // 方法为ClassPathXmlApplicationContext，参数为刚才创建的XML文件名
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        // 与注解式相同的是此处同样会有两个方法的构造输出
+        // 相同的getBean方法，在容器中获取指定的方法
+        MessagePrinter printer = context.getBean(MessagePrinter.class);
+        // 执行
+        printer.printMessage();
+    }
+}
+
+```
+
+
 
