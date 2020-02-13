@@ -8,23 +8,23 @@ File -> Setting -> Languages&Framework -> PHP 选择PHP版本 (建议和WEB环�
 
 如果CLI Interpreter没有可以选择的PHP版本 就点击右边的三个点
 
-![1580971597754](../static/1580971597754.png)
+![1580971597754](https://raw.githubusercontent.com/canon1014/note/master/static/1580971597754.png)
 
 ②配置PHPUnit环境
 
 File -> Setting -> Languages&Framework -> Test Framework 选择PHPUnit 路径
 
-![1580971702361](../static/1580971702361.png) 
+![1580971702361](https://raw.githubusercontent.com/canon1014/note/master/static/1580971702361.png) 
 
 注意填写路径为项目下的vendor\autoload.php，配置成功则显示PHPUnit版本号
 
- ![1580971824824](../static/1580971824824.png)
+![1580971824824](https://raw.githubusercontent.com/canon1014/note/master/static/1580971824824.png)
 
  
 
 ## **2.** **使用命令行**
 
-![1580971864997](../static/1580971864997.png)
+![1580971864997](https://raw.githubusercontent.com/canon1014/note/master/static/1580971864997.png)
 
  
 
@@ -40,7 +40,7 @@ File -> Setting -> Languages&Framework -> Test Framework 选择PHPUnit 路径
 - 在项目根目录的/tests文件夹下创建测试用例，目录结构与控制器统一
 - 同一个测试类中可有多个方法，方法名需test开头 否则没有run的按钮
 
-![1580971957308](../static/1580971957308.png)
+![1580971957308](https://raw.githubusercontent.com/canon1014/note/master/static/1580971957308.png)
 
 ## 
 
@@ -149,4 +149,4 @@ class IndexTest extends TestCase
 
 ## **运行结果：**
 
-![1580972145170](../static/1580972145170.png)
+![1580972145170](https://raw.githubusercontent.com/canon1014/note/master/static/1580972145170.png)
