@@ -129,6 +129,7 @@ public class Lksun {
     private List<Object> lists;
     private Map<String,Object> maps;
     private Dog dog;
+    // 此处还可以这样
     @Value("${server.port}")
     private Integer port;
 
